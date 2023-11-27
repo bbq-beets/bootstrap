@@ -1,6 +1,6 @@
 name: CSS (node-sass)
 
-run-name: Running first party validation for ${{ inputs.chosen-runner }}
+run-name: Running smoke test on ${{ inputs.chosen-runner }}
 on:
   workflow_dispatch:
     inputs:
@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   css:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.chosen-runner }}
 
     steps:
       - name: Clone repository
